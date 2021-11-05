@@ -9,6 +9,7 @@ variable "prefix" {
   description = "This prefix will be included in the name of most resources."
 }
 
+
 variable "region" {
   description = "The region where the resources are created."
   default     = "us-west-1"
@@ -47,4 +48,9 @@ variable "width" {
 variable "placeholder" {
   default     = "placekitten.com"
   description = "Image-as-a-service URL. Some other fun ones to try are fillmurray.com, placecage.com, placebeard.it, loremflickr.com, baconmockup.com, placeimg.com, placebear.com, placeskull.com, stevensegallery.com, placedog.net"
+}
+
+
+variable "route53_zone_id" {
+  description = "zone id."
 }
