@@ -188,6 +188,18 @@ resource "null_resource" "configure-cat-app" {
   }
 }
 
+resource "aws_route53_zone" "primary" {
+  name = "stoffee.io"
+}
+
+resource "aws_route53_record" "hashicat" {
+  zone_id = aws_route53_zone.primary.zone_id
+  name    = "hashicat.stoffee.io"
+  type    = "A"
+  ttl     = "300"
+  records = [aws_eip.hashicat.public_ip]
+}
+
 resource "tls_private_key" "hashicat" {
   algorithm = "RSA"
 }
