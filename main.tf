@@ -26,7 +26,7 @@ resource "aws_vpc" "hashicat" {
 resource "aws_subnet" "hashicat" {
   vpc_id     = aws_vpc.hashicat.id
   cidr_block = var.subnet_prefix
-  availability_zone = "us-west-2c"
+  availability_zone = "us-west-2b"
 
   tags = {
     name = "${var.prefix}-subnet"
